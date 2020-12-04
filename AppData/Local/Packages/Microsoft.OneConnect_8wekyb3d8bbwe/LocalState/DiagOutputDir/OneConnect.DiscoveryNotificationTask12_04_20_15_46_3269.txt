@@ -1,0 +1,14 @@
+12/04/2020 20:15:46.40	Information	Unable to read file DataMartConfig.json. Exception: One or more errors occurred. (Das System kann die angegebene Datei nicht finden. (Exception from HRESULT: 0x80070002))
+12/04/2020 20:15:46.54	Information	HResult: -2146233088
+Message: One or more errors occurred. (Das System kann die angegebene Datei nicht finden. (Exception from HRESULT: 0x80070002))
+StackTrace:    at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean) + 0x2d
+   at DataMartServiceAPI.DataMartConfigurationFactory.GetDataMartConfiguration() + 0x233
+
+12/04/2020 20:15:46.55	Information	Discovery Notification Task started. Checking conditions...
+12/04/2020 20:15:46.55	Information	Unable to read file DataMartConfig.json. Exception: One or more errors occurred. (Das System kann die angegebene Datei nicht finden. (Exception from HRESULT: 0x80070002))
+12/04/2020 20:15:46.55	Information	HResult: -2146233088
+Message: One or more errors occurred. (Das System kann die angegebene Datei nicht finden. (Exception from HRESULT: 0x80070002))
+StackTrace:    at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean) + 0x2d
+   at DataMartServiceAPI.DataMartConfigurationFactory.GetDataMartConfiguration() + 0x233
+
+12/04/2020 20:15:46.56	Information	No modem found. No Notification Shown.
