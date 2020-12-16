@@ -5,6 +5,9 @@ package pis.hue1;
 
 
 public class Caesar implements Codec {
+	/**
+	 * Die schlüssel ist für der lösungwort und soll nicht leer sein
+	 */
 	private String schluessel;                                                       //schluessel
 	int convertir=0;
 	
@@ -12,11 +15,16 @@ public class Caesar implements Codec {
 	
 	String ceoutAnfang = "" ;
 	
+	
+	
 	/** wir conveertieren string zu ascii ,
 	 wir addieren schlüssel.length ,
-	 wir convertieren wieder zu string **/
-	
-	public   String kodiere(String s){                                                                             //kodiere
+	 wir convertieren wieder zu string 
+	 *@param s
+	 *@return st für ceoutChar 
+	 */
+	public   String kodiere(String s){ //kodiere
+		
 		
 		String r = s;//.toLowerCase();
 		StringBuilder st = new StringBuilder() ;
@@ -100,8 +108,13 @@ public class Caesar implements Codec {
 	          // methode fÜr die dekodierung
 	/** wir conveertieren string zu ascii ,
 	 wir addieren die Schlüsseln länge ,
-	 wir convertieren wieder zu string **/
+	 wir convertieren wieder zu string */
 	
+	
+	/**inverse Verfahren von Codierungwürfel: plus werden minus
+	 *@param s
+	 *@return st fur ceoutchar
+	 */
 	public   String dekodiere(String s){                                              //dekodiere
 		
 		

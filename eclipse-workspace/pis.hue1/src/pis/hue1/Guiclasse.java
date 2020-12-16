@@ -116,7 +116,17 @@ b1.setFont(new Font("Tahoma", Font.ITALIC, 18));
 		
 		panel.add(b2);
 		b2.setBounds(300, 400, 300, 53);
-		b2.addActionListener(new ActionListener(){
+		b2.addActionListener(
+		/**
+		 * @author yannd
+		 *
+		 */
+		new ActionListener(){
+			/**
+			 * @author yannd
+			 *@param ActionEvent e
+			 */
+			
 			
 			public void actionPerformed(ActionEvent e) {
 				if(rdbtnCaesar.isSelected()) {
@@ -149,5 +159,10 @@ b1.setFont(new Font("Tahoma", Font.ITALIC, 18));
 				}
 			}
 		});
+		
+		
+		
+		
+		
 	}
 }

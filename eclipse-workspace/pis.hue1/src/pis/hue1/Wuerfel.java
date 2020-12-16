@@ -14,22 +14,33 @@ public class Wuerfel implements Codec {
 	
 	
 	public Wuerfel() {
-		// TODO Auto-generated constructor stub
+		 //TODO Auto-generated constructor stub
 	}
 
 
 
 
-
+	/**
+	 * Die schlüssel ist für der lösungwort und soll nicht leer sein
+	 */
+	
 	private String schluessel;                     //schluessel
 	
-	
+	/**
+	 * @param klartext
+	 * @author yann
+	 * @return st für geheimtextArray
+	 * ich nehmme ein String (klartext und schlüsseln und verändere in Array ,
+	 * ich finde der Lösungswort und der Geheimtext mit for schleife und 
+	 * ich benutze StringBuilder und der Geheimtext auszugeben
+	 */
 	
 	 public  String  kodiere(String klartext){                   //kodiere
 		 int v = 0 ; 
 		 int x = 0 ;
 		 int z = 0 ;
 		 int t = 0 ;
+		 
 		String  losungsworts = schluessel;
          String losungswort = losungsworts.toLowerCase();
          StringBuilder st = new StringBuilder() ;
@@ -74,8 +85,12 @@ public class Wuerfel implements Codec {
          
          for( int i=0;i<losungswort.length();i++){
        for( int n=losungZahl[i];n<klarTextstringArray.length;n=n+losungswort.length()){
-       geheimtextArray[x]= klarTextstringArray[n];
-       
+    	   try { geheimtextArray[x]= klarTextstringArray[n];
+    	   }catch(Exception ex)
+    	   {
+    	       // ex.printStackTrace();
+    	    	System.out.println("sie haben keinen klartext gegeben");
+    	    }
        ++x;
        }
        
@@ -84,19 +99,26 @@ public class Wuerfel implements Codec {
    /**
     * der    geheimtextArray in Strring umwandeln
     */
-   
+   try {
     for(int j = 0 ; j< klarTextstringArray.length; j++){
+    	
            st.append(geheimtextArray[j]);
        }
+    }catch(Exception ex)
+   {
+       // ex.printStackTrace();
+    	System.out.println("Geben Sie  eienen klartext ");
+    }
    return st.toString() ;
     
      } //methodecode
 	 
 	 /**
 	  * methode Dekodierung
+	  * gleiche Verfahren wie bei der Kodierung
 	  * @param geheimtext
 	  * @param losungsworts
-	  * @return
+	  * @return st fur klarTextstringArray
 	  */
 	 public  String  dekodiere(String geheimtext){ //dekodiere
 		 int v = 0 ; 
@@ -146,9 +168,16 @@ public class Wuerfel implements Codec {
    
    //array to String umwandeln
      StringBuilder str = new StringBuilder() ;
+     try {
      for(int j = 0 ; j< geheimtextArray.length ; j++){
            str.append(klarTextstringArray[j]) ;
        }
+     }catch(Exception ex)
+     {
+          ex.printStackTrace();
+      	
+      }
+     
     
         
     return str.toString() ;
@@ -158,15 +187,37 @@ public class Wuerfel implements Codec {
 
 	@Override
 	public String gibLosung() {
-		// TODO Auto-generated method stub
+		
 		return schluessel;
 	}
+	
+	
+	
+	
 
-	@Override
-	public void setzeLosung(String schluessel)  {
-		this.schluessel = schluessel;
-		//String schluessel = schluessel.toLowerCase();
+	   @Override
+	   public void setzeLosung(String schluessel)  {
+		   try {
+		   this.schluessel = schluessel;
+		   } catch(Exception ex)
+	        {
+			   if(schluessel=="") {
+			   
+	            System.out.println("leere Schlüssel");
+			   }
+			   System.out.println("unangenehme Schlüssel");
+	        }
 		
-	}
+	   }
 
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
 }
