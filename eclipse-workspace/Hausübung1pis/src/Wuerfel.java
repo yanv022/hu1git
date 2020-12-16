@@ -20,24 +20,26 @@ public class Wuerfel implements Codec {
 
 
 	private String schluessel;                     //schluessel
-	static int v = 0 ; 
-	static int x = 0 ;
-	static int z = 0 ;
-	static   int t = 0 ;
+	
+	
 	
 	 public  String  kodiere(String klartext){                   //kodiere
+		 int v = 0 ; 
+		 int x = 0 ;
+		 int z = 0 ;
+		 int t = 0 ;
 		String  losungsworts = schluessel;
          String losungswort = losungsworts.toLowerCase();
          StringBuilder st = new StringBuilder() ;
           String [] stringArray = losungswort.split("");
          String [] klarTextstringArray =klartext.split(""); 
-         String [] geheimtextArray = new String [klarTextstringArray.length];
-         int [] losungZahl = new int [stringArray.length];                                                                     //jai ajouter le comm
+         String [] geheimtextArray = new String [klartext.length()];
+         int [] losungZahl = new int [schluessel.length()];                                                                     //jai ajouter le comm
          String [] stringArraySortiert =losungswort.split("");
           //String [] stringArraySortiert =losungswort.split("");
          Arrays.sort(stringArraySortiert);
          
-         schluessel = losungsworts;                                                                      //schluessel
+         //schluessel = losungsworts;                                                                      //schluessel
          
          
          //cacul le lösung zahl
@@ -46,8 +48,8 @@ public class Wuerfel implements Codec {
           *
           */
          
-         for( int j=0;j<stringArray.length;j++){
-        for( int i=0;i<stringArray.length;i++){
+         for( int j=0;j<schluessel.length();j++){
+        for( int i=0;i<schluessel.length();i++){
         
          
          if(stringArray[i].equals(stringArraySortiert[j])){
@@ -56,9 +58,11 @@ public class Wuerfel implements Codec {
         losungZahl[v]= i;
         v = v+1;
         
-          }  // if
+          } 
+         
+        
         } //for 2
-       
+        
     } // for 1
     //der Geheimtext finden:codierung
           /**
@@ -74,12 +78,13 @@ public class Wuerfel implements Codec {
        }
        
    } 
+         
    /**
     * der    geheimtextArray in Strring umwandeln
     */
    
     for(int j = 0 ; j< klarTextstringArray.length; j++){
-           st.append(geheimtextArray[j]) ;
+           st.append(geheimtextArray[j]);
        }
    return st.toString() ;
     
@@ -91,7 +96,11 @@ public class Wuerfel implements Codec {
 	  * @param losungsworts
 	  * @return
 	  */
-	 public  String  dekodiere(String geheimtext){                                                                            //dekodiere
+	 public  String  dekodiere(String geheimtext){ //dekodiere
+		 int v = 0 ; 
+		 int x = 0 ;
+		 int z = 0 ;
+		 int t = 0 ;
 		 String  losungsworts = schluessel;                                                                       //schlussel
          String losungswort = losungsworts.toLowerCase(); //in klein Buchtabe ändern
           String [] klarTextstringArray =geheimtext.split(""); 

@@ -44,7 +44,7 @@ public class CodecTest {
         assertEquals("eintreffendersendungverspaetetneuerterminfolgt", codec_1.dekodiere("rneregnfirsrtdeulnsptnveoedtmeeregteaefntnfuei"));
         assertEquals("rneregnfirsrtdeulnsptnveoedtmeeregteaefntnfuei", codec_2.dekodiere("ndeeelmtsvtrngieedffprugnennsefiteereertoarutn"));
 
-        codec_1.setzeLosung("HTM");
+        codec_1.setzeLosung("THM");
         codec_2.setzeLosung("Mittelhessen");
 
         assertEquals("Franz jagt im komplett verwahrlosten Taxi quer durch Bayern, 12345678910!?", codec_1.dekodiere("rza  me rhoeTiu r yn1471?a gikptvwrsna edcBe,2580Fnjtmoltealt xqruhar 369!"));
